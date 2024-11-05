@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareGiver Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <img src="images/logo.png" class="logo" alt="App Logo">
+      <h1>CareGiver Services</h1>
+    </header>
+
+    <!-- Login Page -->
+    <section id="login">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account?</p>
+    </section>
+
+    <!-- Service Selection -->
+    <section id="service-selection" style="display: none;">
+      <h2>Select Service Type</h2>
+      <button id="temporary-caregiver">Temporary Caregiver</button>
+      <button id="fulltime-caregiver">Full-Time Caregiver</button>
+      <button id="apply-for-job">Apply for Job</button>
+    </section>
+
+    <!-- Temporary Caregiver -->
+    <section id="temp-caregiver" style="display: none;">
+      <h2>Temporary Caregiver Service</h2>
+      <form id="temp-form">
+        <input type="text" placeholder="Patient Name" required>
+        <label for="from-date">From Date:</label>
+        <input type="date" id="from-date" required>
+        <label for="to-date">To Date:</label>
+        <input type="date" id="to-date" required>
+        <label for="from-time">From Time:</label>
+        <input type="time" id="from-time" required>
+        <label for="to-time">To Time:</label>
+        <input type="time" id="to-time" required>
+        <input type="text" placeholder="Address" required>
+        <input type="text" placeholder="Medical Condition" required>
+        <select id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <button type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Full-Time Caregiver -->
+    <section id="fulltime-caregiver-section" style="display: none;">
+      <h2>Full-Time Caregiver Service</h2>
+      <form id="fulltime-form">
+        <input type="text" placeholder="Patient Name" required>
+        <input type="text" placeholder="Medical Condition" required>
+        <input type="file" accept="application/pdf" required>
+        <input type="date" id="full-from-date" required>
+        <input type="time" placeholder="Start Time" required>
+        <select id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <button type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Payment Page -->
+    <section id="payment-page" style="display: none;">
+      <h2>Payment Details</h2>
+      <p>Select a payment method:</p>
+      <p id="total-payment">Total Payment: $0</p>
+      <div class="payment-options">
+        <button id="credit-debit-card">Pay with Credit/Debit Card</button>
+        <button id="upi">Pay with UPI</button>
+      </div>
+      <form id="payment-form" style="display: none;">
+        <input type="text" placeholder="Card Number / UPI ID" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Expiry Date" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit">Proceed to Pay</button>
+      </form>
+      <!-- QR Code Display for UPI -->
+      <div id="upi-qr" style="display: none; text-align: center;">
+        <h3>Scan this QR Code to Pay</h3>
+        <img src="qr.jpg" alt="UPI QR Code" style="max-width: 200px;">
+        <button type="submit">Proceed to Pay</button>
+      </div>
+    </section>
+
+    <!-- Payment Success Page -->
+    <section id="payment-success" style="display: none;">
+      <h2>Payment Successful!</h2>
+      <p>Thank you for using our services.</p>
+      <p>Redirecting to Caretaker details...</p>
+    </section>
+
+    <!-- Caretaker Details Page -->
+    <section id="caretaker-details" style="display: none;">
+      <h2>Assigned Caretaker Details</h2>
+      <div id="caretaker-info">
+        <p><strong>Name:</strong> Jane Doe</p>
+        <p><strong>Experience:</strong> 5 years</p>
+        <p><strong>ID:</strong> 123456</p>
+      </div>
+      <button id="back-to-login">Back to Login</button>
+    </section>
+
+    <!-- Apply for Job Page -->
+    <section id="apply-job" style="display: none;">
+      <h2>Apply for Caregiver Job</h2>
+      <form id="apply-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="Pincode" id="pincode" required>
+        <input type="text" placeholder="Previous Experience" required>
+        <input type="email" placeholder="Email ID" required>
+        <select required>
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <input type="file" accept="application/pdf" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- SOS Button -->
+    <button id="sos-button" class="sos-button">SOS</button>
+
+    <!-- SOS Alert Page -->
+    <section id="sos-alert" style="display: none;">
+      <h2>Emergency Alert</h2>
+      <p>Ambulance and support team has been informed.</p>
+    </section>
+
+    <!-- Job Application Thank You Page -->
+    <section id="thank-you" style="display: none;">
+      <h2>Thank You for Applying!</h2>
+      <p>Our team will contact you soon.</p>
+      <button id="back-to-login-from-thankyou">Back to Login</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
